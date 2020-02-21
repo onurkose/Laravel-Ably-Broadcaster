@@ -1,5 +1,8 @@
 # Ably Broadcaster for Laravel
 
+## Warning
+This is only a test to check if I can get encrypted channels work. @onurkose
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/springboardvr/laravel-ably-broadcaster.svg?style=flat-square)](https://packagist.org/packages/springboardvr/laravel-ably-broadcaster)
 [![Build Status](https://img.shields.io/travis/springboardvr/laravel-ably-broadcaster/master.svg?style=flat-square)](https://travis-ci.org/springboardvr/laravel-ably-broadcaster)
 [![Quality Score](https://img.shields.io/scrutinizer/g/springboardvr/laravel-ably-broadcaster.svg?style=flat-square)](https://scrutinizer-ci.com/g/springboardvr/laravel-ably-broadcaster)
