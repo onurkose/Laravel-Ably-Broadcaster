@@ -14,7 +14,7 @@ trait UseAblyChannelConventions
      */
     public function isGuardedChannel($channel)
     {
-        return Str::startsWith($channel, ['private-', 'presence-']);
+        return Str::startsWith($channel, ['private-', 'presence-', 'private-encrypted-']);
     }
 
     /**
@@ -27,7 +27,7 @@ trait UseAblyChannelConventions
     {
         if ($this->isGuardedChannel($channel)) {
             return Str::startsWith($channel, 'private-')
-                ? Str::replaceFirst('private-', '', $channel)
+                ? Str::replaceFirst('private-', '', Str::replaceFirst('encrypted-', '', $channel))
                 : Str::replaceFirst('presence-', '', $channel);
         }
 
@@ -45,6 +45,10 @@ trait UseAblyChannelConventions
         return array_map(function ($channel) {
             $channel = (string) $channel;
             if (Str::startsWith($channel, ['private-', 'presence-'])) {
+                if (Str::startsWith($channel, 'private-encrypted-')) {
+                    return Str::replaceFirst('private-encrypted-', 'private-encrypted:', $channel);
+                }
+
                 return Str::startsWith($channel, 'private-')
                     ? Str::replaceFirst('private-', 'private:', $channel)
                     : Str::replaceFirst('presence-', 'presence:', $channel);
