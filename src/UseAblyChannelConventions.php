@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 trait UseAblyChannelConventions
 {
     /**
-     * Return true if channel is protected by authentication.
+     * Return true if channel is protected by authentication..
      *
      * @param  string  $channel
      * @return bool
